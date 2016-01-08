@@ -1,0 +1,25 @@
+<h3>Detalle de Libro</h3>
+  <form {{action "update-book" on="submit"}}>
+  {{#form-input-text "Título"}}
+    {{input class="form-control" value=editBook.title}}
+  {{/form-input-text}}
+
+  {{#form-input-text "Autor"}}
+    {{input class="form-control" value=editBook.author}}
+  {{/form-input-text}}
+
+  {{#form-input-text "Cubierta (600x400)"}}
+    {{input class="form-control" value=editBook.cover}}
+  {{/form-input-text}}
+
+  {{#form-textarea "Descripción"}}
+    {{textarea class="form-control" value=editBook.description}}
+  {{/form-textarea}}
+
+  {{#form-input-checkbox "Estreno"}}
+    {{input type="checkbox" checked=editBook.isPremiere}}
+  {{/form-input-checkbox}}
+  
+  <button type="submit" {{bind-attr class=":btn :btn-primary isInvalid:disabled"}} {{bind-attr disabled=isInvalid}}>Editar Libro</button>
+  <button class="btn btn-danger " {{ action "delete-book"}}>Eliminar Libro</button>
+</form>

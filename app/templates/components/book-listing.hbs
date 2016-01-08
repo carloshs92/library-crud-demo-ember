@@ -1,0 +1,6 @@
+{{#link-to "book" book.id   classBinding=":list-group-item book.isPremiere:list-group-item-info"}}
+    <h4 class="list-group-item-heading">{{book.title}}</h4>
+    <img class="img-thumbnail pull-right" src="{{book.cover}}" width="100"/>
+    <p class="list-group-item-text clearfix">{{book.description}}</p>
+{{/link-to}}
+

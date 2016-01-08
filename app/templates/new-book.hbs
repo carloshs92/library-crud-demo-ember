@@ -1,0 +1,25 @@
+<h3>Agregar Nuevo Libro</h3>
+<p></p>
+<form {{action "create-book" on="submit"}}>
+  {{#form-input-text "Título"}}
+    {{input class="form-control" value=newBook.title}}
+  {{/form-input-text}}
+
+  {{#form-input-text "Autor"}}
+    {{input class="form-control" value=newBook.author}}
+  {{/form-input-text}}
+
+  {{#form-input-text "Cubierta (600x400)"}}
+    {{input class="form-control" value=newBook.cover}}
+  {{/form-input-text}}
+
+  {{#form-textarea "Descripción"}}
+    {{textarea class="form-control" value=newBook.description}}
+  {{/form-textarea}}
+
+  {{#form-input-checkbox "Estreno"}}
+    {{input type="checkbox" checked=newBook.isPremiere}}
+  {{/form-input-checkbox}}
+  
+  {{input type="submit" value="Guardar Libro" classBinding=":btn :btn-primary isInvalid:disabled"}}
+</form>

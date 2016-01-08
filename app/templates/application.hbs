@@ -1,3 +1,24 @@
-<h2 id="title">Welcome to Ember</h2>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            {{#link-to "index" class="navbar-brand"}}Mi Libreria{{/link-to}}
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    {{#link-to "about"}}Nosotros{{/link-to}}
+                </li>
+                <li>
+                    {{#link-to "contact-me"}}Contactame{{/link-to}}
+                </li>
+                <li>
+                    {{#link-to "books"}}Mis Libros{{/link-to}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    {{outlet}}
+</div>
 
-{{outlet}}
