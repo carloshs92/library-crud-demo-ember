@@ -14,23 +14,33 @@ export default function() {
   
   this.post('/books', function(db, request){
     let attrs = JSON.parse(request.requestBody).data;
-    let book = db.books.insert(attrs);
-    return {data: book}
+    let book = db.books.insert(attrs.attributes);
+    return {
+      data: {
+        type: 'books',
+        id: book.id,
+        attributes: attrs.attributes
+      }
+    };
   });
 
-  this.delete('/books/:id');
-  
-  this.patch('/books/:id', function(db, request){
+  this.delete('/books/:id', (db, request) => {
+    //var id = request.params.id;
+    //var book = db.books.remove(id);
+    return {};
+  }, 204);
+
+  this.patch('/books/:id', (db, request) => {
     var id = request.params.id;
     var attrs = JSON.parse(request.requestBody).data;
-    var book = db.books.update(id, attrs);
+    var book = db.books.update(id, attrs.attributes);
     return {
-      data : {
-        type: "books",
-        id: book.id,
-        attributes: book
+      data: {
+        type: 'books',
+        id: id,
+        attributes: attrs.attributes
       }
-    }
+    };
   });
 
   this.get('/books/:id', function(db, request){

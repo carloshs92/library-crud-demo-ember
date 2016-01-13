@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-  	var books = this.store.findAll('book');
+    
     return this.store.findAll('book');
 
     //Ember.RSVP.hash({
@@ -12,4 +12,3 @@ export default Ember.Route.extend({
     //});
   },
 });
-

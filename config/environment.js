@@ -4,6 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'my-app',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
+    firebase: 'https://brilliant-inferno-6272.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {

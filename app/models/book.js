@@ -5,5 +5,5 @@ export default DS.Model.extend({
   author: DS.attr('string'),
   cover: DS.attr('string'),
   description: DS.attr('string'),
-  isPremiere: DS.attr('boolean', { defaultValue: false })
+  isPremiere: DS.attr('boolean', {defaultValue: false})
 });
